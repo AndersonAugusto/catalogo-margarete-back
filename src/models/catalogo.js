@@ -13,15 +13,15 @@ const catalogos = database.define('catalogo' , {
         allowNull: false
     },
     descricao: {
-        type: Sequelize.STRING(100),
+        type: Sequelize.STRING(255),
         allowNull: true
     },
     urlCatalogo: {
-        type: Sequelize.STRING(100),
+        type: Sequelize.STRING(150),
         allowNull: true
     },
     urlImagem: {
-        type: Sequelize.STRING(100),
+        type: Sequelize.STRING(150),
         allowNull: true
     },
     bitAtivo: {

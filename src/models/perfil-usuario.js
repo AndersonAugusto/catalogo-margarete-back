@@ -13,11 +13,15 @@ const perfilusuario = database.define('perfilUsuario' , {
         allowNull: false
     },
     sobremim: {
-        type: Sequelize.STRING(150),
+        type: Sequelize.STRING(1000),
         allowNull: true
     },
     whatsapp: {
         type: Sequelize.STRING(150),
+        allowNull: true
+    },
+    codigoEditar: {
+        type: Sequelize.STRING(6),
         allowNull: true
     },
     bitAtivo: {

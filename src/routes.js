@@ -8,6 +8,7 @@ router.get('/' , (req, res) => { return res.status(200).send({ Message: 'Bem-vin
 //INFO USUARIO
 router.get('/perfil' , perfilController.perfil)
 router.post('/perfil' , perfilController.editaPerfil)
+router.post('/postCodigo' , perfilController.postCodigo)
 
 //CATALOGO
 router.post('/catalogo' , catalogoController.editarCatalogo)
