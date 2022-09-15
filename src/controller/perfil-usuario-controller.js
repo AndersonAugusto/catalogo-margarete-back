@@ -91,8 +91,34 @@ const postCodigo = async (req, res) => {
     }
 }
 
+const validaCodigo = async (req, res) => {
+    try {
+        const {codigo , idUsuario} = req.query
+
+        const perfil = await perfilUsuario.findByPk(idUsuario);
+
+        if(!codigo) {
+            return res.status(400).send({ Message: 'Código não informado!' })
+        }
+
+        if(codigo === perfil.codigoEditar) {
+            return res.status(200).send({
+                Message: 'Código validado! você tem permissão para editar a página.'
+            }) 
+        } else {
+            return res.status(403).send({
+                Message: 'O código inválido.'
+            }) 
+        }
+
+    } catch(error){
+        return res.status(500).send({ Message: error.Message })
+    }
+}
+
 module.exports = {
     perfil,
     editaPerfil,
-    postCodigo
+    postCodigo,
+    validaCodigo
 }
