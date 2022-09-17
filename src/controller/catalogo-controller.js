@@ -38,9 +38,9 @@ const editarCatalogo = async (req , res) => {
 
 const deleteCatalogo = async (req , res) => {
     try {
-        const data = req.body
+        const idCatalogo = req.query.idCatalogo
 
-        const catalogo = await catalogos.findByPk(data.idCatalogo);
+        const catalogo = await catalogos.findByPk(idCatalogo);
         await catalogo.destroy()
 
         return res.status(200).send({ 

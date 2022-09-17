@@ -68,7 +68,7 @@ const postCodigo = async (req, res) => {
         vonage.message.sendSms(
             'Vonage',
             '5519987793121' ,
-             `Seu codigo de verificacao é ${data.codigo} \n\n`,
+            `Seu codigo de verificacao é ${data.codigo} \n\n`,
 
             (err , responseData) => {
                 if(err) {
@@ -78,7 +78,6 @@ const postCodigo = async (req, res) => {
                 }
             }
         )
-
 
         const perfilAtualizado = await perfilUsuario.findByPk(data.idUsuario);
 
